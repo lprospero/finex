@@ -11,13 +11,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd1k0q2l0t2o5s9',
+        'USER': 'btcokrvxhcjkca',
+        'PASSWORD': 'gW2KT9ueEwpeEia7wLS7UT6F1Z',
+        'HOST': 'ec2-54-243-137-0.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -72,6 +71,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+	'C:/Users/lprospero/Documents/hackathon/finex/static_files/',
 )
 
 # List of finder classes that know how to find static files in
@@ -111,6 +111,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+	'C:/Users/lprospero/Documents/hackathon/finex/templates/',
 )
 
 INSTALLED_APPS = (
@@ -154,3 +155,20 @@ LOGGING = {
         },
     }
 }
+
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd1k0q2l0t2o5s9',
+        'USER': 'btcokrvxhcjkca',
+        'PASSWORD': 'gW2KT9ueEwpeEia7wLS7UT6F1Z',
+        'HOST': 'ec2-54-243-137-0.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

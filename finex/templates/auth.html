@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>FInEX|Login</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link href="/static/StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header>
+		<div class="layout">
+			<h1></h1>
+			<h2 itemprop="description">Log in to your account</h2>
+		</div>
+	</header>
+	<section class="message">
+		<div class="clouds">
+			<div class="graybox">
+				{% if success == 0 %}
+					<p class="error">{{ state }}</p>
+				{% endif %}
+				<form name="login" action="/login/" method="post" class="qwikform">
+					{% csrf_token %}
+					{% if next %}
+						<input type="hidden" name="next" value="{{ next }}" />
+					{% endif %}
+					<div class="field field-input"> 
+						<input type="text" name="username" placeholder="username" value="{{ username }}">
+					</div>
+					<div class="field field-input">
+						<input type="password" name="password" id="password" placeholder="password" value="">
+					</div>
+					<div class="submit">
+						<button type="submit" class="bigred">Log In</button>
+					</div>
+					<!--<div class="notes">
+						<a href="http://qwik.vu/forgotpass/">I've forgotten my password</a>
+					</div>-->
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
+
+		<!--<form action="/login/" method="post">
+		{% csrf_token %} 
+			{% if next %}
+				<input type="hidden" name="next" value="{{ next }}" />
+			{% endif %}
+			username: <input type="text" name="username" value="{{ username}}" /><br />
+			password: <input type="password" name="password" value="" /><br />
+			<input type="submit" value="Log In" />
+		</form> -->

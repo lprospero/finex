@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	{% if success %}
+		<META HTTP-EQUIV="refresh" CONTENT="2;URL={{ redirect }}">
+	{% else %}
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	{% endif %}
+	<link href="/static/StyleSheet.css" rel="stylesheet" type="text/css" />
+	<title>FInEX|Redirect</title>
+</head>
+
+<body>
+	{% if success %}
+		<header>
+			<div class="layout">
+				<h1>If you are not redirected automatically in 2 seconds, click <a href ="{{ redirect }}">here</a>.</h1>
+			</div>
+		</header>
+    {% endif %}
+</body>
+</html>
