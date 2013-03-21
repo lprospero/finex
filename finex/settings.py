@@ -20,6 +20,9 @@ DATABASES = {
     }
 }
 
+import os.path
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -71,7 +74,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-	'C:/Users/lprospero/Documents/hackathon/finex/static_files/',
+	os.path.join(PROJECT_ROOT,'static_files/'),
 )
 
 # List of finder classes that know how to find static files in
@@ -111,7 +114,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-	'C:/Users/lprospero/Documents/hackathon/finex/templates/',
+	os.path.join(PROJECT_ROOT,'templates/'),
 )
 
 INSTALLED_APPS = (
